@@ -18,7 +18,7 @@ export default function ArticlePage() {
   } = useSWRImmutable<ArticleModel>(id ? "/articles/" + id : null);
 
   return (
-    <Layout>
+    <Layout meta={{ title: article?.title || "Native Teams" }}>
       <BackdropLoading isLoading={isLoading}>
         {error && !isLoading ? (
           <ErrorComponent />
@@ -29,3 +29,7 @@ export default function ArticlePage() {
     </Layout>
   );
 }
+
+export const getServerSideProps = async () => ({
+  props: {},
+});

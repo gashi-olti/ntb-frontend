@@ -7,6 +7,7 @@ import { ArticleModel } from "@/interfaces/article.interface";
 import { ResponseModel } from "@/interfaces/response.interface";
 import ArticlesList from "@/components/Articles";
 import usePagination from "@/hooks/usePagination";
+import { pageMetaProps } from "@/config/pages";
 
 export default function Articles() {
   const router = useRouter();
@@ -28,7 +29,7 @@ export default function Articles() {
     ?.slice(startIndex, endIndex);
 
   return (
-    <Layout>
+    <Layout meta={pageMetaProps.article}>
       <ArticlesList
         articles={paginatedArticles}
         totalResults={data?.totalResults}
@@ -38,3 +39,7 @@ export default function Articles() {
     </Layout>
   );
 }
+
+export const getStaticProps = async () => ({
+  props: {},
+});
