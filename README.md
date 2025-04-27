@@ -12,11 +12,12 @@ npm run dev
 yarn dev
 # or
 pnpm dev
+```
 
 ## Tech Stack
+
 - Next.js
 - Tailwind CSS
 - TypeScript
 - Shadcn UI
 - SWR
-```
